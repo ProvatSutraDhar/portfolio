@@ -1,0 +1,2 @@
+class WebPortfolio < ApplicationRecord
+end

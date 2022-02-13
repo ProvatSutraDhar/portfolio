@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Web portfolios</h1>
+
+<div id="web_portfolios">
+  <% @web_portfolios.each do |web_portfolio| %>
+    <%= render web_portfolio %>
+    <p>
+      <%= link_to "Show this web portfolio", web_portfolio %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New web portfolio", new_web_portfolio_path %>
