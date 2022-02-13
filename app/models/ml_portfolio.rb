@@ -1,0 +1,2 @@
+class MlPortfolio < ApplicationRecord
+end

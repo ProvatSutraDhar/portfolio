@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ml portfolios</h1>
+
+<div id="ml_portfolios">
+  <% @ml_portfolios.each do |ml_portfolio| %>
+    <%= render ml_portfolio %>
+    <p>
+      <%= link_to "Show this ml portfolio", ml_portfolio %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ml portfolio", new_ml_portfolio_path %>

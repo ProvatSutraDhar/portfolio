@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ml_portfolios
   resources :web_portfolios
   get 'pages/home'
     root "pages#home"

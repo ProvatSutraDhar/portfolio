@@ -1,0 +1,62 @@
+<%= form_with(model: ml_portfolio) do |form| %>
+  <% if ml_portfolio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ml_portfolio.errors.count, "error") %> prohibited this ml_portfolio from being saved:</h2>
+
+      <ul>
+        <% ml_portfolio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :subtitle, style: "display: block" %>
+    <%= form.text_field :subtitle %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :language, style: "display: block" %>
+    <%= form.text_field :language %>
+  </div>
+
+  <div>
+    <%= form.label :framework, style: "display: block" %>
+    <%= form.text_field :framework %>
+  </div>
+
+  <div>
+    <%= form.label :libraries, style: "display: block" %>
+    <%= form.text_field :libraries %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div>
+    <%= form.label :photo, style: "display: block" %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

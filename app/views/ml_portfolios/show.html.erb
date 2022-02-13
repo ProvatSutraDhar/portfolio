@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ml_portfolio %>
+
+<div>
+  <%= link_to "Edit this ml portfolio", edit_ml_portfolio_path(@ml_portfolio) %> |
+  <%= link_to "Back to ml portfolios", ml_portfolios_path %>
+
+  <%= button_to "Destroy this ml portfolio", @ml_portfolio, method: :delete %>
+</div>
