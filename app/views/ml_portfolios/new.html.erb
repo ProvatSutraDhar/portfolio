@@ -1,9 +1,14 @@
-<h1>New ml portfolio</h1>
-
-<%= render "form", ml_portfolio: @ml_portfolio %>
-
-<br>
-
-<div>
-  <%= link_to "Back to ml portfolios", ml_portfolios_path %>
+<center class="mt-20">
+<div class="card col-md-8">
+  <div class="card-header">
+    <h1> New ML portfolio</h1>
+  </div>
+  <div class="card-body">
+    <%= render "form", ml_portfolio: @ml_portfolio %>
+    <br>
+    <div>
+      <%= link_to "Back to ml portfolios", ml_portfolios_path %>
+    </div>
+  </div>
 </div>
+</center>

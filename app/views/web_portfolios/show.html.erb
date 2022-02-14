@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="card border-default mb-10">
 <%= render @web_portfolio %>
-
+<div class="card-footer bg-transparent border-success">
+  <b>
+  
 <div>
   <%= link_to "Edit this web portfolio", edit_web_portfolio_path(@web_portfolio) %> |
   <%= link_to "Back to web portfolios", web_portfolios_path %>
 
   <%= button_to "Destroy this web portfolio", @web_portfolio, method: :delete %>
+</div>
+
+</b>
+</div>
 </div>

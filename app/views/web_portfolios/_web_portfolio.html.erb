@@ -1,9 +1,10 @@
 <div id="<%= dom_id web_portfolio %>">
-  <p>
+  <div class="card-header bg-transparent border-success">
+    <p class="h2">
     <strong>Title:</strong>
     <%= web_portfolio.title %>
   </p>
-
+  <div class="card-body text-success">
   <p>
     <strong>Subtitle:</strong>
     <%= web_portfolio.subtitle %>
@@ -11,7 +12,7 @@
 
   <p>
     <strong>Type:</strong>
-    <%= web_portfolio.type %>
+    <%= web_portfolio.portfolio_type %>
   </p>
 
   <p>
@@ -45,3 +46,4 @@
   </p>
 
 </div>
+  </div>

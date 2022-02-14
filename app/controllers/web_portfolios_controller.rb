@@ -1,6 +1,5 @@
 class WebPortfoliosController < ApplicationController
   before_action :set_web_portfolio, only: %i[ show edit update destroy ]
-
   # GET /web_portfolios or /web_portfolios.json
   def index
     @web_portfolios = WebPortfolio.all
@@ -65,6 +64,6 @@ class WebPortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def web_portfolio_params
-      params.require(:web_portfolio).permit(:title, :subtitle, :type, :client_side, :server_side, :database, :description, :url, :photo)
+      params.require(:web_portfolio).permit(:title, :subtitle, :portfolio_type, :client_side, :server_side, :database, :description, :url, :photo)
     end
 end

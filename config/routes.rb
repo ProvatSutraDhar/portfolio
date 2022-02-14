@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :ml_portfolios
+
   resources :web_portfolios
+
+  get 'ml_portfolios/delete'
+  get 'ml_portfolios/destroy'
+  resources :ml_portfolios do
+    get 'show', to: 'show#id'
+  end
   get 'pages/home'
     root "pages#home"
   devise_for :users

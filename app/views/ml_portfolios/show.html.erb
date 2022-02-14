@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
+<div class="card border-default mb-10">
 <%= render @ml_portfolio %>
-
-<div>
-  <%= link_to "Edit this ml portfolio", edit_ml_portfolio_path(@ml_portfolio) %> |
-  <%= link_to "Back to ml portfolios", ml_portfolios_path %>
-
-  <%= button_to "Destroy this ml portfolio", @ml_portfolio, method: :delete %>
+<div class="card-footer bg-transparent border-success">
+  <b>
+    <p>
+  <%= link_to "Edit this portfolio", edit_ml_portfolio_path(@ml_portfolio) %> |
+  <%= link_to "Back to portfolios", ml_portfolios_path %>
+  <%= button_to "Destroy this portfolio", @ml_portfolio, method: :delete  %>
+  </p>
+</b>
+</div>
 </div>

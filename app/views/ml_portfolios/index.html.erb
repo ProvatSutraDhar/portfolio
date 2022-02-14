@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<center>
+<div class="col-md-10">
+<h1>ML portfolios</h1>
+<br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Language</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ml_portfolios.each do |ml_portfolio| %>
+      <tr>
+        <th scope="row"><%= ml_portfolio.id%></th>
+        <td> <%= ml_portfolio.title %></td>
+        <td><%= ml_portfolio.language %></td>
+        <td>  <%= link_to "View in Details", ml_portfolio %></td>
+      </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add new Portfolio", new_ml_portfolio_path, class:'btn btn-primary' %>
 
-<h1>Ml portfolios</h1>
-
-<div id="ml_portfolios">
-  <% @ml_portfolios.each do |ml_portfolio| %>
-    <%= render ml_portfolio %>
-    <p>
-      <%= link_to "Show this ml portfolio", ml_portfolio %>
-    </p>
-  <% end %>
 </div>
-
-<%= link_to "New ml portfolio", new_ml_portfolio_path %>
+<center>

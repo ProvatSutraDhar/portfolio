@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_13_082936) do
   create_table "ml_portfolios", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
-    t.string "type"
+    t.string "portfolio_type"
     t.string "language"
     t.string "framework"
     t.string "libraries"
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_13_082936) do
   create_table "web_portfolios", force: :cascade do |t|
     t.string "title"
     t.string "subtitle"
-    t.string "type"
+    t.string "portfolio_type"
     t.string "client_side"
     t.string "server_side"
     t.string "database"

@@ -1,14 +1,30 @@
 <p style="color: green"><%= notice %></p>
-
+<center>
+<div class="col-md-10">
 <h1>Web portfolios</h1>
-
-<div id="web_portfolios">
-  <% @web_portfolios.each do |web_portfolio| %>
-    <%= render web_portfolio %>
-    <p>
-      <%= link_to "Show this web portfolio", web_portfolio %>
-    </p>
-  <% end %>
-</div>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Language</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @web_portfolios.each do |web_portfolio| %>
+    <tr>
+      <th scope="row"><%= web_portfolio.id%></th>
+      <td> <%= web_portfolio.title %></td>
+      <td><%= web_portfolio.server_side %></td>
+      <td>  <%= link_to "View in Details", web_portfolio %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New web portfolio", new_web_portfolio_path %>
+
+</div>
+<center>

@@ -1,6 +1,5 @@
 class MlPortfoliosController < ApplicationController
   before_action :set_ml_portfolio, only: %i[ show edit update destroy ]
-
   # GET /ml_portfolios or /ml_portfolios.json
   def index
     @ml_portfolios = MlPortfolio.all
@@ -65,6 +64,6 @@ class MlPortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ml_portfolio_params
-      params.require(:ml_portfolio).permit(:title, :subtitle, :type, :language, :framework, :libraries, :description, :url, :photo)
+      params.require(:ml_portfolio).permit(:title, :subtitle, :portfolio_type, :language, :framework, :libraries, :description, :url, :photo)
     end
 end

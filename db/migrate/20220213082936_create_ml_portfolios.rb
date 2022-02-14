@@ -3,7 +3,7 @@ class CreateMlPortfolios < ActiveRecord::Migration[7.0]
     create_table :ml_portfolios do |t|
       t.string :title
       t.string :subtitle
-      t.string :type
+      t.string :portfolio_type
       t.string :language
       t.string :framework
       t.string :libraries

@@ -1,3 +1,6 @@
+
+
+<div class="col-md-12">
 <%= form_with(model: ml_portfolio) do |form| %>
   <% if ml_portfolio.errors.any? %>
     <div style="color: red">
@@ -10,53 +13,67 @@
       </ul>
     </div>
   <% end %>
+    <div class="row gy-3">
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+      <div  class="col-md-4">
+        <div class="form-group">
+          <%= form.text_field :title, class:"form-control",placeholder:"Portfolio title",required:true %>
+        </div>
+      </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.text_field :subtitle, class:"form-control",placeholder:"Portfolio subtitle",required:true %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+          <%= form.text_field :portfolio_type, class:"form-control",placeholder:"portfolio type",required:true %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.text_field :language, class:"form-control",placeholder:"Programming language",required:true %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.text_field :framework, class:"form-control",placeholder:"Framework used",required:true %>
+      </div>
+    </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.text_field :libraries, class:"form-control",placeholder:"libraries used",required:true %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :subtitle, style: "display: block" %>
-    <%= form.text_field :subtitle %>
+  <div class="col-lg-12">
+    <%= form.text_area :description, class:"form-control", placeholder:"Abstract/Objectives", required:true %>
   </div>
 
-  <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.text_field :type %>
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= form.text_field :url, class:"form-control", placeholder:"project's url(if any)" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :language, style: "display: block" %>
-    <%= form.text_field :language %>
+  <div class="col-md-6">
+    <div class="form-group">
+    <%= form.text_field :photo,style: "display: block", class:"form-control", placeholder:"Featured image" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :framework, style: "display: block" %>
-    <%= form.text_field :framework %>
+    <div class="mt-0">
+      <div class="col-md-12">
+        <%= form.submit class: "btn btn-defeault" %>
+        </div>
+      </div>
+
   </div>
 
-  <div>
-    <%= form.label :libraries, style: "display: block" %>
-    <%= form.text_field :libraries %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :url, style: "display: block" %>
-    <%= form.text_field :url %>
-  </div>
-
-  <div>
-    <%= form.label :photo, style: "display: block" %>
-    <%= form.text_field :photo %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
+</div>
