@@ -1,10 +1,16 @@
-<h1>Editing career detail</h1>
-
-<%= render "form", career_detail: @career_detail %>
-
-<br>
-
-<div>
-  <%= link_to "Show this career detail", @career_detail %> |
-  <%= link_to "Back to career details", career_details_path %>
-</div>
+<center class="mt-20">
+  <div class="card col-md-8">
+    <div class="card-header">
+      <h1>Editing career detail</h1>
+     </div>
+    <div class="card-body">
+      <%= render "form", career_detail: @career_detail %>
+      <br>
+      <div>
+        <b>
+        <%= link_to "Show this career detail", @career_detail %> |
+        <%= link_to "Back to career details", career_details_path %>
+        </b>
+      </div>
+    </div>
+  </center>

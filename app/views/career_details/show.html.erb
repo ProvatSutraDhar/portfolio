@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
-
+<center>
+<div class="col-md-10">
+<div class="card border-default mb-10">
+  <div class="card-header">
+    <h2>Career Details</h2>
+  </div>
 <%= render @career_detail %>
-
+<div class="card-footer bg-transparent border-success">
+  <b>
 <div>
+    <b>
   <%= link_to "Edit this career detail", edit_career_detail_path(@career_detail) %> |
   <%= link_to "Back to career details", career_details_path %>
-
-  <%= button_to "Destroy this career detail", @career_detail, method: :delete %>
+</b>
+  <%= button_to "Destroy this career detail", @career_detail, method: :delete, class:"btn btn-danger" %>
 </div>
+</b>
+</div>
+</div>
+</center>
