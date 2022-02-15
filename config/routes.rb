@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :career_details
 
   resources :web_portfolios
 
