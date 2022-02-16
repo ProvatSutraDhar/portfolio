@@ -20,6 +20,15 @@
   <div class="col-lg-12">
     <%= form.text_area :details, class:"form-control", placeholder:"Carrer Objectives in Details", required:true %>
   </div>
+    <div class="col-lg-12">
+      <%=form.label :photo%>
+      <%= form.file_field :photo, class:"form-control" %>
+      <%=form.hidden_field :photo_cache%>
+
+      <%if @career_detail.photo.present?%>
+      <%=image_tag @career_detail.photo.thumb.url%>
+      <%end%>
+    </div>
 
   <div>
     <%= form.submit class:"btn btn-defeault" %>

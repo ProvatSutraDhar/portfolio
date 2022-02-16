@@ -65,6 +65,6 @@ class CareerDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def career_detail_params
-      params.require(:career_detail).permit(:heading, :details)
+      params.require(:career_detail).permit(:heading, :details, :photo, :photo_cache)
     end
 end

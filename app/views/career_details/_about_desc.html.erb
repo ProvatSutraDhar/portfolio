@@ -1,12 +1,22 @@
-
-<div class="about-descr">
-  <% @career_details.each do |career_detail| %>
-  <p class="p-heading">
-   <%= career_detail.heading %></p>
-   <div class="d-flex justify-content-start">
-
-  <%= career_detail.details %>
-  </div>
-
-    <% end %>
+  <div class="row justify-content-between">
+    <div class="col-lg-3 ">
+      <div class="div-img-bg">
+        <div class="about-img">
+            <% @career_details.each do |cd| %>
+        <%= image_tag cd.photo.url%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="about-descr">
+        <% @career_details.each do |career_detail| %>
+        <p class="p-heading">
+         <%= career_detail.heading %></p>
+         <div class="d-flex justify-content-start">
+         <%= career_detail.details %>
+        </div>
+          <% end %>
+        </div>
+    </div>
   </div>
