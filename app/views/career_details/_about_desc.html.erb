@@ -3,8 +3,10 @@
   <% @career_details.each do |career_detail| %>
   <p class="p-heading">
    <%= career_detail.heading %></p>
-    <p class="separator">
-    <%= career_detail.details %></p>
-    <% end %>
+   <div class="d-flex justify-content-start">
 
-      </div>
+  <%= career_detail.details %>
+  </div>
+
+    <% end %>
+  </div>
