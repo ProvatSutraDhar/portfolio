@@ -27,8 +27,10 @@
 
   <div class="col-md-4">
     <div class="form-group">
-        <%= form.text_field :portfolio_type, class:"form-control",placeholder:"portfolio type",required:true %>
-    </div>
+      <div class="form-control">
+        <%= form.select :portfolio_type, options_for_select(['Web', 'ML', 'App','Data Mining'])%>
+      </div>
+      </div>
   </div>
 
   <div class="col-md-4">
@@ -62,11 +64,16 @@
 
   <div class="col-md-6">
     <div class="form-group">
-    <%= form.text_field :photo, class:"form-control", placeholder:"Photo", required:true %>
+    <%= form.file_field :photo, class:"form-control" %>
+      <%= form.hidden_field :photo_cache %>
+
+      <%if @web_portfolio.photo.present?%>
+      <%=image_tag @web_portfolio.photo.thumb.url%>
+      <%end%>
   </div>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-default" %>
   </div>
 <% end %>

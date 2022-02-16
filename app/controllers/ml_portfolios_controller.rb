@@ -64,6 +64,6 @@ class MlPortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ml_portfolio_params
-      params.require(:ml_portfolio).permit(:title, :subtitle, :portfolio_type, :language, :framework, :libraries, :description, :url, :photo)
+      params.require(:ml_portfolio).permit(:title, :subtitle, :portfolio_type, :language, :framework, :libraries, :description, :url, :photo, :photo_cache)
     end
 end
