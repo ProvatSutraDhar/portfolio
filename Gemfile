@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
-gem 'fog', '~> 2.2'
+
 gem 'mini_magick', '~> 4.11'
 
 group :development, :test do
