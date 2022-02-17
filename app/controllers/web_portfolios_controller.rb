@@ -12,10 +12,17 @@ class WebPortfoliosController < ApplicationController
   # GET /web_portfolios/new
   def new
     @web_portfolio = WebPortfolio.new
+    
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # GET /web_portfolios/1/edit
   def edit
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # POST /web_portfolios or /web_portfolios.json

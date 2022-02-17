@@ -12,10 +12,16 @@ class MlPortfoliosController < ApplicationController
   # GET /ml_portfolios/new
   def new
     @ml_portfolio = MlPortfolio.new
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # GET /ml_portfolios/1/edit
   def edit
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # POST /ml_portfolios or /ml_portfolios.json

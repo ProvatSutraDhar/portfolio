@@ -13,10 +13,16 @@ class CareerDetailsController < ApplicationController
   # GET /career_details/new
   def new
     @career_detail = CareerDetail.new
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # GET /career_details/1/edit
   def edit
+    if !current_user.admin?
+      redirect_to root_path
+    end
   end
 
   # POST /career_details or /career_details.json
@@ -49,6 +55,9 @@ class CareerDetailsController < ApplicationController
 
   # DELETE /career_details/1 or /career_details/1.json
   def destroy
+    if !current_user.admin?
+      redirect_to root_path
+    end
     @career_detail.destroy
 
     respond_to do |format|
