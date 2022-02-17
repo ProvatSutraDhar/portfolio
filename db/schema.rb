@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_17_032547) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_17_200111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.string "subtitle"
+    t.integer "views", default: 0
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
 
   create_table "career_details", force: :cascade do |t|
     t.text "heading"
@@ -71,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_17_032547) do
     t.index ["user_id"], name: "index_web_portfolios_on_user_id"
   end
 
+  add_foreign_key "blogs", "users"
   add_foreign_key "career_details", "users"
   add_foreign_key "ml_portfolios", "users"
   add_foreign_key "web_portfolios", "users"

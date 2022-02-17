@@ -6,6 +6,7 @@ class User < ApplicationRecord
       has_many :web_portfolios
       has_many :ml_portfolios
       has_many :career_details
+      has_many :blogs
 
          enum role: [:user, :admin]
          after_initialize :set_default_role, :if => :new_record?
