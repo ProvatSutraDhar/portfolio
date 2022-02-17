@@ -249,6 +249,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8)
+  image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
   mini_magick (~> 4.11)

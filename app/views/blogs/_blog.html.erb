@@ -9,14 +9,17 @@
     <%= blog.subtitle %>
   </p>
 
+    <p>
+      <strong>image:</strong>
+      <%=image_tag blog.photo.url %>
+    </p>
+
+    <p>
+      <strong>body:</strong>
+      <%= blog.body %>
+    </p>
   <p>
     <strong>Views:</strong>
     <%= blog.views %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= blog.user_id %>
-  </p>
-
 </div>

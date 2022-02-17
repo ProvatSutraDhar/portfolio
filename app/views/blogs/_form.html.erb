@@ -1,8 +1,8 @@
+<div class="col-md-12">
 <%= form_with(model: blog) do |form| %>
   <% if blog.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
       <ul>
         <% blog.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="col-lg-12">
+    <%=  form.text_field :title, class:"form-control", placeholder:"Title", required:true %>
+  </div>
+  <div class="col-lg-12">
+    <%=  form.text_field :subtitle, class:"form-control", placeholder:"Subitle", required:true %>
+  </div>
+
+  <div class="col-lg-12">
+    <%=  form.rich_text_area :body, class:"form-control", placeholder:"Subitle", required:true %>
+  </div>
+
+  <div class="col-lg-12">
+    <%= form.file_field :photo, class:"form-control" %>
+    <%= form.hidden_field :photo_cache%>
+    <%if @blog.photo.present?%>
+    <%=image_tag @blog.photo.thumb.url%>
+    <%end%>
   </div>
 
   <div>
-    <%= form.label :subtitle, style: "display: block" %>
-    <%= form.text_field :subtitle %>
-  </div>
-
-  <div>
-    <%= form.label :views, style: "display: block" %>
-    <%= form.number_field :views %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-defeault" %>
   </div>
 <% end %>
+</div>
