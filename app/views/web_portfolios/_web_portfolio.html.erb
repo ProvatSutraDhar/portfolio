@@ -30,8 +30,8 @@
                   <%=image_tag web_portfolio.photo.url %>
                 </div>
           </div>
-        </div>
-            </div>
+          </div>
+          </div>
 
           <div class="col-md-4">
             <div class="portfolio-info">
@@ -39,9 +39,14 @@
               <ul>
                 <li><strong>Title</strong>:<%= web_portfolio.title%></li>
                 <li><strong>Subtitle</strong>:<%= web_portfolio.subtitle%></li>
-                <li><strong>Fontend</strong>:<%= web_portfolio.client_side%></li>
-                <li><strong>Backend</strong>:<%= web_portfolio.server_side%></li>
-                <li><strong>Database</strong>:<%= web_portfolio.database%></li>
+                  <%if web_portfolio.portfolio_type == 'ML'%>
+                    <li><strong>Language</strong>:<%= web_portfolio.language%></li>
+                    <li><strong>libraries</strong>:<%= web_portfolio.library%></li>
+                  <%else%>
+                    <li><strong>Fontend</strong>:<%= web_portfolio.client_side%></li>
+                    <li><strong>Backend</strong>:<%= web_portfolio.server_side%></li>
+                    <li><strong>Database</strong>:<%= web_portfolio.database%></li>
+                  <%end%>
                 <li><strong>Project URL</strong>: <%= web_portfolio.url%></li>
               </ul>
             </div>

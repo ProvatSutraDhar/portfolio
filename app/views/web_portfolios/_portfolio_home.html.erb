@@ -2,7 +2,7 @@
          <div class="col-lg-12 d-flex justify-content-center">
            <ul id="portfolio-flters">
              <li data-filter="*" class="filter-active">All</li>
-             <li data-filter=".filter-app">App</li>
+             <li data-filter=".filter-App">App</li>
              <li data-filter=".filter-ML">ML</li>
              <li data-filter=".filter-Web">Web</li>
            </ul>
@@ -12,15 +12,14 @@
    <% @web_portfolios.each do |web_portfolio|%>
    <div class="col-lg-4 col-md-6 portfolio-item filter-<%= web_portfolio.portfolio_type%>">
   <%= image_tag web_portfolio.photo.url, class:"img-fluid", alt:""%>
-
   <div class="portfolio-info">
   <strong><%=web_portfolio.title%></strong>
   <a <%= link_to web_portfolio.photo.url, 'data-gallery': "portfolioGallery", class:"portfolio-lightbox preview-link", title: web_portfolio.title  do %>
   <i class="bx bx-plus"></i>  <%end%>
   </a>
   <a <%= link_to web_portfolio_path(web_portfolio),  class:"details-link", title:"More Details" do %><i class="bx bx-link"></i><%end%></a>
-    </div>
+  </div>
 </div>
 
   <%end%>
-<div>
+</div>
