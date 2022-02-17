@@ -12,23 +12,28 @@ class WebPortfoliosController < ApplicationController
   # GET /web_portfolios/new
   def new
     @web_portfolio = WebPortfolio.new
-    
-    if !current_user.admin?
+    if !current_user.present?
       redirect_to root_path
+    elsif
+     !current_user.admin?
+        redirect_to root_path
     end
   end
 
   # GET /web_portfolios/1/edit
   def edit
-    if !current_user.admin?
-      redirect_to root_path
+    if !current_user.present?
+      redirect_to web_portfolio_path
+    elsif
+     !current_user.admin?
+        redirect_to web_portfolio_path
     end
   end
 
   # POST /web_portfolios or /web_portfolios.json
   def create
     @web_portfolio = WebPortfolio.new(web_portfolio_params)
-
+    @web_portfolio.user = current_user
     respond_to do |format|
       if @web_portfolio.save
         format.html { redirect_to web_portfolio_url(@web_portfolio), notice: "Web portfolio was successfully created." }
@@ -42,6 +47,7 @@ class WebPortfoliosController < ApplicationController
 
   # PATCH/PUT /web_portfolios/1 or /web_portfolios/1.json
   def update
+      @web_portfolio.user = current_user
     respond_to do |format|
       if @web_portfolio.update(web_portfolio_params)
         format.html { redirect_to web_portfolio_url(@web_portfolio), notice: "Web portfolio was successfully updated." }

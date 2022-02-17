@@ -9,11 +9,16 @@
 <div class="card-footer bg-transparent border-success">
   <b>
 <div>
+
     <b>
   <%= link_to "Edit this career detail", edit_career_detail_path(@career_detail) %> |
   <%= link_to "Back to career details", career_details_path %>
 </b>
+<%if current_user%>
+    <%if !current_user.admin?%>
   <%= button_to "Destroy this career detail", @career_detail, method: :delete, class:"btn btn-danger" %>
+  <%end%>
+  <%end%>
 </div>
 </b>
 </div>

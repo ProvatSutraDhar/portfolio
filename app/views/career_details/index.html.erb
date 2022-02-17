@@ -23,5 +23,8 @@
       <% end %>
   </tbody>
 </table>
-
+<%if current_user%>
+    <%if !current_user.admin?%>
 <%= link_to "New career detail", new_career_detail_path , class:"btn btn-secondary"%>
+<%end%>
+<%end%>

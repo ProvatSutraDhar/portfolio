@@ -1,5 +1,6 @@
 class MlPortfoliosController < ApplicationController
   before_action :set_ml_portfolio, only: %i[ show edit update destroy ]
+
   # GET /ml_portfolios or /ml_portfolios.json
   def index
     @ml_portfolios = MlPortfolio.all
@@ -12,22 +13,29 @@ class MlPortfoliosController < ApplicationController
   # GET /ml_portfolios/new
   def new
     @ml_portfolio = MlPortfolio.new
-    if !current_user.admin?
+    if !current_user.present?
       redirect_to root_path
+    elsif
+     !current_user.admin?
+        redirect_to root_path
     end
+
   end
 
   # GET /ml_portfolios/1/edit
   def edit
-    if !current_user.admin?
-      redirect_to root_path
+    if !current_user.present?
+      redirect_to ml_portfolio_path
+    elsif
+     !current_user.admin?
+        redirect_to ml_portfolio_path
     end
   end
 
   # POST /ml_portfolios or /ml_portfolios.json
   def create
     @ml_portfolio = MlPortfolio.new(ml_portfolio_params)
-
+  @ml_portfolio.user = current_user
     respond_to do |format|
       if @ml_portfolio.save
         format.html { redirect_to ml_portfolio_url(@ml_portfolio), notice: "Ml portfolio was successfully created." }
@@ -41,6 +49,7 @@ class MlPortfoliosController < ApplicationController
 
   # PATCH/PUT /ml_portfolios/1 or /ml_portfolios/1.json
   def update
+    @ml_portfolio.user = current_user
     respond_to do |format|
       if @ml_portfolio.update(ml_portfolio_params)
         format.html { redirect_to ml_portfolio_url(@ml_portfolio), notice: "Ml portfolio was successfully updated." }

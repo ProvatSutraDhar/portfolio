@@ -3,9 +3,13 @@
 <div class="card-footer bg-transparent border-success">
   <b>
     <p>
+      <%if current_user%>
+          <%if current_user.admin?%>
   <%= link_to "Edit this portfolio", edit_ml_portfolio_path(@ml_portfolio) %> |
   <%= link_to "Back to portfolios", ml_portfolios_path %>
   <%= button_to "Destroy this portfolio", @ml_portfolio, method: :delete  %>
+  <%end%>
+  <%end%>
   </p>
 </b>
 </div>

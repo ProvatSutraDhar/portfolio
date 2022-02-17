@@ -1,6 +1,5 @@
 class CareerDetailsController < ApplicationController
   before_action :set_career_detail, only: %i[ show edit update destroy ]
-
   # GET /career_details or /career_details.json
   def index
     @career_details = CareerDetail.all
@@ -13,22 +12,28 @@ class CareerDetailsController < ApplicationController
   # GET /career_details/new
   def new
     @career_detail = CareerDetail.new
-    if !current_user.admin?
+    if !current_user.present?
       redirect_to root_path
+    elsif
+     !current_user.admin?
+        redirect_to root_path
     end
   end
 
   # GET /career_details/1/edit
   def edit
-    if !current_user.admin?
-      redirect_to root_path
+    if !current_user.present?
+      redirect_to career_detail_path
+    elsif
+     !current_user.admin?
+        redirect_to career_detail_path
     end
   end
 
   # POST /career_details or /career_details.json
   def create
     @career_detail = CareerDetail.new(career_detail_params)
-
+    @career_detail.user = current_user
     respond_to do |format|
       if @career_detail.save
         format.html { redirect_to career_detail_url(@career_detail), notice: "Career detail was successfully created." }
@@ -42,6 +47,7 @@ class CareerDetailsController < ApplicationController
 
   # PATCH/PUT /career_details/1 or /career_details/1.json
   def update
+      @career_detail.user = current_user
     respond_to do |format|
       if @career_detail.update(career_detail_params)
         format.html { redirect_to career_detail_url(@career_detail), notice: "Career detail was successfully updated." }
