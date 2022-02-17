@@ -77,6 +77,6 @@ class WebPortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def web_portfolio_params
-      params.require(:web_portfolio).permit(:title, :subtitle, :portfolio_type, :client_side, :server_side, :database, :description, :url, :photo, :photo_cache)
+      params.require(:web_portfolio).permit(:title, :subtitle, :portfolio_type, :client_side, :server_side, :database, :description, :url, :photo, :photo_cache, :language, :library)
     end
 end

@@ -32,6 +32,16 @@
       </div>
       </div>
   </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.select :language, options_for_select(['Ruby', 'Python', 'R','Java','Php'])%>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.text_field :libraries, class:"form-control",placeholder:"libraries used",required:true %>
+    </div>
+  </div>
 
   <div class="col-md-4">
     <div class="form-group">
