@@ -1,49 +1,60 @@
 <div id="<%= dom_id web_portfolio %>">
-  <div class="card-header bg-transparent border-success">
-    <p class="h2">
-    <strong>Title:</strong>
-    <%= web_portfolio.title %>
-  </p>
-  <div class="card-body text-success">
-  <p>
-    <strong>Subtitle:</strong>
-    <%= web_portfolio.subtitle %>
-  </p>
+<main id="main">
 
-  <p>
-    <strong>Type:</strong>
-    <%= web_portfolio.portfolio_type %>
-  </p>
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
 
-  <p>
-    <strong>Client side:</strong>
-    <%= web_portfolio.client_side %>
-  </p>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfolio Details</h2>
+          <ol>
+              <li><%= link_to "Home", pages_home_path %></li>
+              <li><%= link_to "Portfolio", web_portfolio_path(@web_portfolio) %></a></li>
+            <li>Portfolio Details</li>
+          </ol>
+        </div>
 
-  <p>
-    <strong>Server side:</strong>
-    <%= web_portfolio.server_side %>
-  </p>
+      </div>
+    </section><!-- Breadcrumbs Section -->
 
-  <p>
-    <strong>Database:</strong>
-    <%= web_portfolio.database %>
-  </p>
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
 
-  <p>
-    <strong>Description:</strong>
-    <%= web_portfolio.description %>
-  </p>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
 
-  <p>
-    <strong>Url:</strong>
-    <%= web_portfolio.url %>
-  </p>
+                <div class="swiper-slide">
+                  <%=image_tag web_portfolio.photo.url %>
+                </div>
+          </div>
+        </div>
+            </div>
 
-  <p>
-    <strong>Photo:</strong>
-    <%= web_portfolio.photo %>
-  </p>
+          <div class="col-md-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Title</strong>:<%= web_portfolio.title%></li>
+                <li><strong>Subtitle</strong>:<%= web_portfolio.subtitle%></li>
+                <li><strong>Fontend</strong>:<%= web_portfolio.client_side%></li>
+                <li><strong>Backend</strong>:<%= web_portfolio.server_side%></li>
+                <li><strong>Database</strong>:<%= web_portfolio.database%></li>
+                <li><strong>Project URL</strong>: <%= web_portfolio.url%></li>
+              </ul>
+            </div>
 
+
+            <div class="portfolio-description">
+              <h2> Portfolio detail</h2>
+            <%= web_portfolio.description%>
+            </div>
+                </div>
+      </div>
+    </div>
 </div>
-  </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
