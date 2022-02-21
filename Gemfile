@@ -7,7 +7,7 @@ ruby "3.0.3"
 gem "rails", "~> 7.0.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -54,6 +54,7 @@ gem "image_processing", "~> 1.2"
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 gem 'mini_magick', '~> 4.11'
+gem 'mail_form', '~> 1.9'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
