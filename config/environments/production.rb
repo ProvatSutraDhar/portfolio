@@ -34,7 +34,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'https://cryptic-plains-43973.herokuapp.com', # UPDATE THIS VALUE WITH YOUR OWN APP
+    :domain         => 'https://provatsd.herokuapp.com', # UPDATE THIS VALUE WITH YOUR OWN APP
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
