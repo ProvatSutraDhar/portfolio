@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :blogs
+  resources :blogs do
+    resources :comments
+  end
+    resources :comments
   resources :career_details
   resources :web_portfolios
-   resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create]
+
   get 'ml_portfolios/delete'
   get 'ml_portfolios/destroy'
   resources :ml_portfolios do

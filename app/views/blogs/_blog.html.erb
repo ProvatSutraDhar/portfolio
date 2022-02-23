@@ -22,4 +22,9 @@
     <strong>Views:</strong>
     <%= blog.views %>
   </p>
+
+  <div class="container">
+    <%=render 'comments/form', commentable: @blog, local:Comment.new %>
+  </div>
+
 </div>

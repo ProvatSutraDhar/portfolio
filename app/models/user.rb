@@ -7,11 +7,21 @@ class User < ApplicationRecord
       has_many :ml_portfolios
       has_many :career_details
       has_many :blogs
+      has_many :comments, as: :commentable, dependent: :destroy
+
+
 
          enum role: [:user, :admin]
          after_initialize :set_default_role, :if => :new_record?
 
          def set_default_role
            self.role ||=:user
+          end
+
+
+          def comment_created
+            self.number_of_comments = number_of_comments + 1
+            save
+            number_of_comments
           end
      end
