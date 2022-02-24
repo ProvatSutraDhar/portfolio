@@ -3,20 +3,18 @@ class CommentsController < ApplicationController
   before_action :set_comment, except: [:create]
   before_action :authenticate_user!
 
-
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
     @comment.reply = true if params[:comment_id]
     @comment.save
-
+      redirect_to @commentable
   end
 
   def edit
-
   end
-  def update
 
+  def update
     if @comment.edit_history = 'Original: ' + @comment.body.body.to_plain_text + "\n"
     else
       @comment.edit_history = @comment.edit_history + 'Edit: ' + params[:comment][:body]+ "\n"
@@ -28,7 +26,7 @@ class CommentsController < ApplicationController
 
   end
   def history
-    
+
 
   end
 
