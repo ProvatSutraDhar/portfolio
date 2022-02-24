@@ -8,13 +8,20 @@ class User < ApplicationRecord
       has_many :career_details
       has_many :blogs
       has_many :comments, dependent: :destroy
-      
+
+      #Define User role
          enum role: [:user, :admin]
          after_initialize :set_default_role, :if => :new_record?
 
          def set_default_role
            self.role ||=:user
           end
+
+      #split email for Username
+
+      def username
+        email.split('@')[0].capitalize        
+      end
 
 
           def comment_created
